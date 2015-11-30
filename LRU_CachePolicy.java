@@ -30,7 +30,9 @@ public class LRU_CachePolicy {
 		LinkedList<Integer> sizes = new LinkedList<Integer>();
 
 		Scanner in = new Scanner(System.in);
+		System.out.println("Please Enter the FileName (e.g Filename.lis): ");
 		file_name = in.nextLine();
+		System.out.println("Please Enter the Cache Size (e.g 1024, 2048) : ");
 		cache_size = in.nextInt();
 		String[] ch;
 
@@ -66,16 +68,17 @@ public class LRU_CachePolicy {
 				temp_size = sizes.removeFirst();
 				insert_element(temp, temp_size);
 			}
-
-			System.out.println("1. hit count = " + hit_count);
-			System.out.println("2. miss count = " + miss_count);
-			System.out.println("3. total count = " + miss_count + hit_count);
+			System.out.println("Reslts");
+			System.out.println("-------");
+			System.out.println("1. Hit count : " + hit_count);
+			System.out.println("2. Miss count : " + miss_count);
+			System.out.println("3. Total count : " + miss_count + hit_count);
 
 			hit_ratio = ((float) hit_count)
 					/ ((float) (hit_count + miss_count)) * 100;
 
 			System.out.println(hit_ratio);
-			System.out.println("4. hit ratio = "
+			System.out.println("4. Hit ratio (%) : "
 					+ (float) round_the_number(hit_ratio));
 
 		} catch (Exception e) {
